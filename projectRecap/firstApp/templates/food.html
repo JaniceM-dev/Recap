@@ -1,0 +1,18 @@
+{% extends 'main.html'%}
+
+{% block content %}
+
+<div class="min-vh-100 mb-4">
+    <h1>HERE IS MORE INFORMATION ABOUT {{food.name}}</h1>
+
+<img src="{{food.image}}" alt="image of food" class="object-fit-cover w-50 ">
+
+ <h1 class="display-2">{{ food.name}}</h1>
+ <h2 class="lead">{{ food.category }}</h2>
+ <p class="fs-3">{{ food.description }}</p>
+ <h3 class="fs-4">{{ food.price}}</h3>
+<a href="{% url 'readAllFoods' %}" class="btn btn-success">Go Back</a>
+<a href="{% url 'updateOneFood' food.id %}" class="btn btn-success">Update</a>
+<a href="{% url 'deleteOneFood' food.id %}" class="btn btn-success">Delete</a>
+</div>
+{% endblock %}

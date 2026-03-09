@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1> HERE ARE ALL THE AVAILABLE FOODS AND THER VARIOUS CATEGORIES</h1>
+
+<div class="d-flex justify-content-center gap-2">
+{% for food in foods %}
+
+
+  <div class="mb-4">
+    <div class="card" style="width: 18rem;">
+  <img src="{{ food.image }}" class="card-img-top" alt="image of food">
+  <div class="card-body">
+    <h5 class="card-title display-6">{{food.name}} </h5>
+    <h4 class="fs-6">Category: {{ food.category }} </h4>
+    <p class="card-text"> Description: {{ food.description }} </p>
+    <h4 class="fs-6">Price: {{ food.price }} </h4>
+    <a href="{% url 'readOneFood' food.id %}" class="btn btn-success">See More</a>
+    <a href="{% url 'updateOneFood' food.id %}" class="btn btn-success">Update</a>
+    <a href="{% url 'deleteOneFood' food.id %}" class="btn btn-success">Delete</a>
+  </div>
+</div>
+</div>
+
+
+{% endfor %}
+
+<a href="{% url 'addFood' %}" class="btn btn-success vh-40">Add New Food </a>
+</div>
+
+
+{% endblock %}
