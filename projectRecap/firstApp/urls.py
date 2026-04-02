@@ -7,5 +7,8 @@ urlpatterns = [
     path ('readAllFoods',views.readAllFoods , name='readAllFoods' ),
     path ('readOneFood/<str:pk>',views.readOneFood, name='readOneFood' ),
     path ('updateOneFood/<str:pk>',views.updateOneFood, name='updateOneFood' ),
-    path ('deleteOneFood/<str:pk>',views.deleteOneFood, name='deleteOneFood' )
+    path ('deleteOneFood/<str:pk>',views.deleteOneFood, name='deleteOneFood' ),
+    path ('index',views.index, name='index' ),
+    path ('makePayment',views.makePayment, name='makePayment' )
+
 ]
